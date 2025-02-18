@@ -24,7 +24,7 @@ Currently the tool only supports Display, Template, Bypass and Render flags.
 ## Installation
 Download the latest release or the current source code.
 
-Install as a package by first editing `quickflags.json` and changing the path to where you store this package, for example `"hpath": "C:/mypackages/quickflags"`, to your `$HOUDINI_USER_PREF_DIR/packages/quickflags.json`
+Install as a package by first editing `quickflags.json` and changing the path to where you store this package (for example `"hpath": "C:/mypackages/quickflags.json"`), then copying it to your `$HOUDINI_USER_PREF_DIR/packages/quickflags.json`
 
 If installed correctly, you should now have a Quickflags shelf tab available.
 
