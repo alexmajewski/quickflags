@@ -1,0 +1,40 @@
+{
+	"fileversion":"20.5.445",
+	"name":"quickflags",
+	"categories":"Standard",
+	"pane":"network",
+	"label":"Quickflags",
+	"type":"submenu",
+	"items":{
+		"1":{
+			"label":"Quickflag 1",
+			"type":"script_action",
+			"script":"radialmenu.runShelfTool(kwargs, 'quickflag1')"
+		},
+		"2":{
+			"label":"Quickflag 2",
+			"type":"script_action",
+			"script":"radialmenu.runShelfTool(kwargs, 'quickflag2')"
+		},
+		"3":{
+			"label":"Quickflag 3",
+			"type":"script_action",
+			"script":"radialmenu.runShelfTool(kwargs, 'quickflag3')"
+		},
+		"5":{
+			"label":"Set Quickflag 3",
+			"type":"script_action",
+			"script":"radialmenu.runShelfTool(kwargs, 'set_quickflag3')"
+		},
+		"6":{
+			"label":"Set Quickflag 2",
+			"type":"script_action",
+			"script":"radialmenu.runShelfTool(kwargs, 'set_quickflag2')"
+		},
+		"7":{
+			"label":"Set Quickflag 1",
+			"type":"script_action",
+			"script":"radialmenu.runShelfTool(kwargs, 'set_quickflag1')"
+		}
+	}
+}

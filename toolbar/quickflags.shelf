@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="quickflags" label="Quickflags">
+    <memberTool name="set_quickflag1"/>
+    <memberTool name="set_quickflag2"/>
+    <memberTool name="set_quickflag3"/>
+    <memberTool name="set_quickflag4"/>
+    <memberTool name="set_quickflag5"/>
+    <memberTool name="quickflag1"/>
+    <memberTool name="quickflag2"/>
+    <memberTool name="quickflag3"/>
+    <memberTool name="quickflag4"/>
+    <memberTool name="quickflag5"/>
+  </toolshelf>
+
+  <tool name="set_quickflag1" label="Set Quickflag 1" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[node_states = {}
+for node in hou.selectedNodes():
+    path = node.path()
+    state = {
+        path: {
+            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
+            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
+            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
+            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
+        }
+    }
+    
+    node_states.update(state)
+
+hou.session.stored_flags_1 = node_states]]></script>
+  </tool>
+
+  <tool name="set_quickflag2" label="Set Quickflag 2" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[node_states = {}
+for node in hou.selectedNodes():
+    path = node.path()
+    state = {
+        path: {
+            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
+            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
+            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
+            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
+        }
+    }
+    
+    node_states.update(state)
+
+hou.session.stored_flags_2 = node_states]]></script>
+  </tool>
+
+  <tool name="set_quickflag3" label="Set Quickflag 3" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[node_states = {}
+for node in hou.selectedNodes():
+    path = node.path()
+    state = {
+        path: {
+            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
+            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
+            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
+            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
+        }
+    }
+    
+    node_states.update(state)
+
+hou.session.stored_flags_3 = node_states]]></script>
+  </tool>
+
+  <tool name="set_quickflag4" label="Set Quickflag 4" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[node_states = {}
+for node in hou.selectedNodes():
+    path = node.path()
+    state = {
+        path: {
+            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
+            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
+            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
+            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
+        }
+    }
+    
+    node_states.update(state)
+
+hou.session.stored_flags_4 = node_states]]></script>
+  </tool>
+
+  <tool name="set_quickflag5" label="Set Quickflag 5" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[node_states = {}
+for node in hou.selectedNodes():
+    path = node.path()
+    state = {
+        path: {
+            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
+            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
+            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
+            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
+        }
+    }
+    
+    node_states.update(state)
+
+hou.session.stored_flags_5 = node_states]]></script>
+  </tool>
+
+  <tool name="quickflag1" label="Quickflag 1" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_1"):
+    
+    for node_path in hou.session.stored_flags_1:
+        if hou.node(node_path):
+        
+            display_val = hou.session.stored_flags_1[node_path]["display"]
+            render_val = hou.session.stored_flags_1[node_path]["render"]
+            template_val = hou.session.stored_flags_1[node_path]["template"]
+            bypass_val = hou.session.stored_flags_1[node_path]["bypass"]
+            
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
+        ]]></script>
+  </tool>
+
+  <tool name="quickflag2" label="Quickflag 2" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_2"):
+    
+    for node_path in hou.session.stored_flags_2:
+        if hou.node(node_path):
+        
+            display_val = hou.session.stored_flags_2[node_path]["display"]
+            render_val = hou.session.stored_flags_2[node_path]["render"]
+            template_val = hou.session.stored_flags_2[node_path]["template"]
+            bypass_val = hou.session.stored_flags_2[node_path]["bypass"]
+            
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
+        ]]></script>
+  </tool>
+
+  <tool name="quickflag3" label="Quickflag 3" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_3"):
+    
+    for node_path in hou.session.stored_flags_3:
+        if hou.node(node_path):
+        
+            display_val = hou.session.stored_flags_3[node_path]["display"]
+            render_val = hou.session.stored_flags_3[node_path]["render"]
+            template_val = hou.session.stored_flags_3[node_path]["template"]
+            bypass_val = hou.session.stored_flags_3[node_path]["bypass"]
+            
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
+        ]]></script>
+  </tool>
+
+  <tool name="quickflag4" label="Quickflag 4" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_4"):
+    
+    for node_path in hou.session.stored_flags_4:
+        if hou.node(node_path):
+        
+            display_val = hou.session.stored_flags_4[node_path]["display"]
+            render_val = hou.session.stored_flags_4[node_path]["render"]
+            template_val = hou.session.stored_flags_4[node_path]["template"]
+            bypass_val = hou.session.stored_flags_4[node_path]["bypass"]
+            
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
+        ]]></script>
+  </tool>
+
+  <tool name="quickflag5" label="Quickflag 5" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_5"):
+    
+    for node_path in hou.session.stored_flags_5:
+        if hou.node(node_path):
+        
+            display_val = hou.session.stored_flags_5[node_path]["display"]
+            render_val = hou.session.stored_flags_5[node_path]["render"]
+            template_val = hou.session.stored_flags_5[node_path]["template"]
+            bypass_val = hou.session.stored_flags_5[node_path]["bypass"]
+            
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
+            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
+        ]]></script>
+  </tool>
+</shelfDocument>
