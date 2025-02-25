@@ -16,185 +16,109 @@
     <memberTool name="quickflag3"/>
     <memberTool name="quickflag4"/>
     <memberTool name="quickflag5"/>
+    <memberTool name="quickflags_settings"/>
   </toolshelf>
 
-  <tool name="set_quickflag1" label="Set Quickflag 1" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[node_states = {}
-for node in hou.selectedNodes():
-    path = node.path()
-    state = {
-        path: {
-            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
-            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
-            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
-            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
-        }
-    }
-    
-    node_states.update(state)
+  <tool name="set_quickflag1" label="Set Quickflag 1" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
 
-hou.session.stored_flags_1 = node_states]]></script>
+quickflags.set_quickflag(kwargs, 1)
+]]></script>
   </tool>
 
-  <tool name="set_quickflag2" label="Set Quickflag 2" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[node_states = {}
-for node in hou.selectedNodes():
-    path = node.path()
-    state = {
-        path: {
-            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
-            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
-            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
-            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
-        }
-    }
-    
-    node_states.update(state)
+  <tool name="set_quickflag2" label="Set Quickflag 2" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
 
-hou.session.stored_flags_2 = node_states]]></script>
+quickflags.set_quickflag(kwargs, 2)]]></script>
   </tool>
 
-  <tool name="set_quickflag3" label="Set Quickflag 3" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[node_states = {}
-for node in hou.selectedNodes():
-    path = node.path()
-    state = {
-        path: {
-            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
-            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
-            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
-            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
-        }
-    }
-    
-    node_states.update(state)
+  <tool name="set_quickflag3" label="Set Quickflag 3" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
 
-hou.session.stored_flags_3 = node_states]]></script>
+quickflags.set_quickflag(kwargs, 3)]]></script>
   </tool>
 
-  <tool name="set_quickflag4" label="Set Quickflag 4" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[node_states = {}
-for node in hou.selectedNodes():
-    path = node.path()
-    state = {
-        path: {
-            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
-            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
-            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
-            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
-        }
-    }
-    
-    node_states.update(state)
+  <tool name="set_quickflag4" label="Set Quickflag 4" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
 
-hou.session.stored_flags_4 = node_states]]></script>
+quickflags.set_quickflag(kwargs, 4)]]></script>
   </tool>
 
-  <tool name="set_quickflag5" label="Set Quickflag 5" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[node_states = {}
-for node in hou.selectedNodes():
-    path = node.path()
-    state = {
-        path: {
-            "display": node.isGenericFlagSet(hou.nodeFlag.Display),
-            "render": node.isGenericFlagSet(hou.nodeFlag.Render),
-            "template": node.isGenericFlagSet(hou.nodeFlag.Template),
-            "bypass": node.isGenericFlagSet(hou.nodeFlag.Bypass)
-        }
-    }
-    
-    node_states.update(state)
+  <tool name="set_quickflag5" label="Set Quickflag 5" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
 
-hou.session.stored_flags_5 = node_states]]></script>
+quickflags.set_quickflag(kwargs, 5)]]></script>
   </tool>
 
-  <tool name="quickflag1" label="Quickflag 1" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_1"):
-    
-    for node_path in hou.session.stored_flags_1:
-        if hou.node(node_path):
-        
-            display_val = hou.session.stored_flags_1[node_path]["display"]
-            render_val = hou.session.stored_flags_1[node_path]["render"]
-            template_val = hou.session.stored_flags_1[node_path]["template"]
-            bypass_val = hou.session.stored_flags_1[node_path]["bypass"]
-            
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
-        ]]></script>
+  <tool name="quickflag1" label="Quickflag 1" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
+
+quickflags.get_quickflag(kwargs, 1)]]></script>
   </tool>
 
-  <tool name="quickflag2" label="Quickflag 2" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_2"):
-    
-    for node_path in hou.session.stored_flags_2:
-        if hou.node(node_path):
-        
-            display_val = hou.session.stored_flags_2[node_path]["display"]
-            render_val = hou.session.stored_flags_2[node_path]["render"]
-            template_val = hou.session.stored_flags_2[node_path]["template"]
-            bypass_val = hou.session.stored_flags_2[node_path]["bypass"]
-            
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
-        ]]></script>
+  <tool name="quickflag2" label="Quickflag 2" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
+
+quickflags.get_quickflag(kwargs, 2)]]></script>
   </tool>
 
-  <tool name="quickflag3" label="Quickflag 3" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_3"):
-    
-    for node_path in hou.session.stored_flags_3:
-        if hou.node(node_path):
-        
-            display_val = hou.session.stored_flags_3[node_path]["display"]
-            render_val = hou.session.stored_flags_3[node_path]["render"]
-            template_val = hou.session.stored_flags_3[node_path]["template"]
-            bypass_val = hou.session.stored_flags_3[node_path]["bypass"]
-            
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
-        ]]></script>
+  <tool name="quickflag3" label="Quickflag 3" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
+
+quickflags.get_quickflag(kwargs, 3)]]></script>
   </tool>
 
-  <tool name="quickflag4" label="Quickflag 4" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_4"):
-    
-    for node_path in hou.session.stored_flags_4:
-        if hou.node(node_path):
-        
-            display_val = hou.session.stored_flags_4[node_path]["display"]
-            render_val = hou.session.stored_flags_4[node_path]["render"]
-            template_val = hou.session.stored_flags_4[node_path]["template"]
-            bypass_val = hou.session.stored_flags_4[node_path]["bypass"]
-            
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
-        ]]></script>
+  <tool name="quickflag4" label="Quickflag 4" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
+
+quickflags.get_quickflag(kwargs, 4)]]></script>
   </tool>
 
-  <tool name="quickflag5" label="Quickflag 5" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[if hasattr(hou.session, "stored_flags_5"):
+  <tool name="quickflag5" label="Quickflag 5" icon="NETVIEW_material_flag">
+    <script scriptType="python"><![CDATA[import quickflags
+
+quickflags.get_quickflag(kwargs, 5)]]></script>
+  </tool>
+
+  <tool name="quickflags_settings" label="Quickflags Settings" icon="MISC_generic">
+    <script scriptType="python"><![CDATA[from PySide2 import QtWidgets
+from PySide2.QtCore import QSettings
+import quickflags
+
+def accept():
+    settings.setValue("store_editor_loc", store_editor_loc_cb.isChecked())
+    dialog.accept()
     
-    for node_path in hou.session.stored_flags_5:
-        if hou.node(node_path):
-        
-            display_val = hou.session.stored_flags_5[node_path]["display"]
-            render_val = hou.session.stored_flags_5[node_path]["render"]
-            template_val = hou.session.stored_flags_5[node_path]["template"]
-            bypass_val = hou.session.stored_flags_5[node_path]["bypass"]
-            
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Display, display_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Render, render_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Template, template_val)
-            hou.node(node_path).setGenericFlag(hou.nodeFlag.Bypass, bypass_val)
-        ]]></script>
+def reject():
+    dialog.reject()
+    
+   
+
+
+settings = QSettings(QSettings.IniFormat, QSettings.UserScope, "Quickflags", "Quickflags")
+
+# settings dialog 
+dialog = hou.qt.Dialog()
+dialog.setWindowTitle("Quickflags Settings")
+layout = QtWidgets.QVBoxLayout()
+layout.setContentsMargins(20, 20, 20, 20)
+dialog.setLayout(layout)
+
+store_editor_loc_setting = settings.value("store_editor_loc", True)
+    
+store_editor_loc_cb = QtWidgets.QCheckBox("Quickflags store editor location and jump to it")
+store_editor_loc_cb.setChecked(quickflags.to_bool(store_editor_loc_setting))
+layout.addWidget(store_editor_loc_cb)
+
+
+button_box = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.Ok | QtWidgets.QDialogButtonBox.Cancel)
+button_box.setContentsMargins(0, 20, 0, 0)
+layout.addWidget(button_box)
+
+button_box.accepted.connect(accept)
+button_box.rejected.connect(reject)
+
+dialog.exec_()
+]]></script>
   </tool>
 </shelfDocument>
